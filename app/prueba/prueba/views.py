@@ -16,16 +16,18 @@ def generar_identificador():
     return base64.b64encode(binario).decode('utf-8')
 
 
-def chat(request):
+def chat_bot_prueba(request):
     request.session['sender'] = generar_identificador()
-    return render(request, "chat.html")
+    return render(request, "bot_prueba.html")
 
 @csrf_exempt
 def enviar_mensaje(request):
     if request.method == 'POST':
         mensaje = request.POST.get('mensaje', '').strip()
+        host = request.POST.get('host', 'localhost').strip()
+        puerto = request.POST.get('puerto', '5002').strip()
         sender = request.session.get('sender', 'bob')
-        respuesta = prueba.peticiones.mandar_mensaje(sender, mensaje)
+        respuesta = prueba.peticiones.mandar_mensaje(sender, mensaje, host, puerto)
         if respuesta:
             contenido = {"mensaje": mensaje, "respuesta": respuesta['text']}
             return JsonResponse(contenido)

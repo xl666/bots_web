@@ -18,5 +18,6 @@ from django.urls import path
 import prueba.views as vistas
 
 urlpatterns = [
-    path('chat/', vistas.chat),
+    path('botPrueba/', vistas.chat_bot_prueba),
+    path('enviar_mensaje/', vistas.enviar_mensaje),
 ]

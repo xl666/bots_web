@@ -4,6 +4,8 @@ $(function(){
     function mandar_recibir_mensaje() {
 	$.post("/enviar_mensaje/", {
 	    mensaje: $("#mensaje").val(),
+	    host: host_bot,
+	    puerto: puerto_bot,
 	}, function(data, status){
 	    var contenido = $("#mensajesBox").html() + "<br />";
 	    var mensaje = '<span class="badge  bg-primary" style="float: right;"><b>' + data.mensaje + '</b></span>';    

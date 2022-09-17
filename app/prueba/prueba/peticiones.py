@@ -1,9 +1,8 @@
 import requests
 import os
 
-BOT_URL = "http://localhost:9001"
-
-def mandar_mensaje(sender, mensaje):
+def mandar_mensaje(sender, mensaje, host, puerto):
+    BOT_URL = "http://%s:%s" % (host, puerto)
     URI = "/webhooks/rest/webhook"
     data = {'sender': sender, 'message': mensaje}
     try:

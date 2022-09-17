@@ -2,9 +2,13 @@
 {% extends 'base.html' %}
 {% block titulo %}Chat{% endblock %}
 
-{% block scripts %}
-<script type="text/javascript" src="/static/js/chat.js"></script>
 
+{% block scripts %}
+<script>
+  var host_bot = "{% block hostBot %}{% endblock %}";
+  var puerto_bot = "{% block puertoBot %}{% endblock %}";
+</script>
+<script type="text/javascript" src="/static/js/chat.js"></script>
 {% endblock %}
 
 {% block encabezado %}Bot prueba{% endblock %}
