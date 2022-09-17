@@ -20,12 +20,12 @@ RUN chmod +x run.sh
 RUN mkdir /app
 WORKDIR /app
 
-RUN useradd pepito -s /bin/bash
+RUN useradd noRoot -s /bin/bash
 
-RUN chown -R pepito /code
+RUN chown -R noRoot /code
 RUN chmod -R 500 /code 
-RUN chown -R pepito /app
+RUN chown -R noRoot /app
 
-USER pepito
+USER noRoot
 
 CMD /bin/bash -c '/code/run.sh'
