@@ -2,7 +2,11 @@
 $(function(){
 
     function mandar_recibir_mensaje() {
-	$.post("/enviar_mensaje/", {
+	var url = "/enviar_mensaje/";
+	if(prefijo_sitio != "") {
+	    url = "/" + prefijo_sitio + "enviar_mensaje/";
+	}
+	$.post(url, {
 	    mensaje: $("#mensaje").val(),
 	    host: host_bot,
 	    puerto: puerto_bot,

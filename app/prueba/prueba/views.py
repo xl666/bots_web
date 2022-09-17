@@ -18,7 +18,7 @@ def generar_identificador():
 
 def chat_bot_prueba(request):
     request.session['sender'] = generar_identificador()
-    return render(request, "bot_prueba.html")
+    return render(request, "bot_prueba.html", {'prefijo': conf.PATH_PREFIX})
 
 @csrf_exempt
 def enviar_mensaje(request):

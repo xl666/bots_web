@@ -1,14 +1,17 @@
 
 {% extends 'base.html' %}
+{% load static %}
+
 {% block titulo %}Chat{% endblock %}
 
 
 {% block scripts %}
 <script>
+  var prefijo_sitio = "{{ prefijo }}";
   var host_bot = "{% block hostBot %}{% endblock %}";
   var puerto_bot = "{% block puertoBot %}{% endblock %}";
 </script>
-<script type="text/javascript" src="/static/js/chat.js"></script>
+<script type="text/javascript" src="{% static 'js/chat.js' %}"></script>
 {% endblock %}
 
 {% block encabezado %}Bot prueba{% endblock %}

@@ -6,6 +6,7 @@ WORKDIR /code
 ADD requirements.txt /code
 RUN pip3 install -r requirements.txt
 
+ENV PATH_PREFIX=""
 ENV SECRET_KEY=""
 ENV DATABASE_NAME=""
 ENV DATABASE_USER=""

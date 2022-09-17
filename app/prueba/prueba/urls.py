@@ -16,8 +16,9 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path
 import prueba.views as vistas
+from prueba import settings
 
 urlpatterns = [
-    path('botPrueba/', vistas.chat_bot_prueba),
-    path('enviar_mensaje/', vistas.enviar_mensaje),
+    path('%sbotPrueba/' % settings.PATH_PREFIX, vistas.chat_bot_prueba, name='botPrueba'),
+    path('%senviar_mensaje/' % settings.PATH_PREFIX, vistas.enviar_mensaje, name='enviar_mensaje'),
 ]

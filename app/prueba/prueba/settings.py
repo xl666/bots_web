@@ -25,6 +25,9 @@ import os
 #SECRET_KEY = os.environ.get('SECRET_KEY')
 SECRET_KEY = 'fdafañjdfñkadjfk442542jñ5'
 
+PATH_PREFIX = os.environ.get('PATH_PREFIX', '')
+if PATH_PREFIX and not PATH_PREFIX.endswith('/'):
+    PATH_PREFIX += '/'
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
@@ -134,6 +137,8 @@ USE_TZ = True
 
 
 STATIC_URL = '/static/'
+if PATH_PREFIX:
+    STATIC_URL = f'/{PATH_PREFIX}static/'
 
 STATICFILES_DIRS = (BASE_DIR.joinpath('static'), )
 
