@@ -16,9 +16,12 @@ def generar_identificador():
     return base64.b64encode(binario).decode('utf-8')
 
 
-def chat_bot_prueba(request):
+def request_proxy(request, template):
     request.session['sender'] = generar_identificador()
-    return render(request, "bot_prueba.html", {'prefijo': conf.PATH_PREFIX})
+    return render(request, template, {'prefijo': conf.PATH_PREFIX})
+
+def chat_bot_prueba(request):
+    return request_proxy(request, 'bot_prueba.html')
 
 @csrf_exempt
 def enviar_mensaje(request):
