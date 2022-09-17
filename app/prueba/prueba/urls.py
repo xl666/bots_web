@@ -18,11 +18,5 @@ from django.urls import path
 import prueba.views as vistas
 
 urlpatterns = [
-    path('admin/', admin.site.urls),
-    path('enviar/', vistas.enviar_formulario),
     path('chat/', vistas.chat),
-    path('enviar_mensaje/', vistas.enviar_mensaje),
-    path('login/', vistas.login),
-    path('restringida/', vistas.pagina_restringida),
-    path('logout/', vistas.logout),
 ]
