@@ -14,11 +14,10 @@ ENV DATABASE_PASSWORD=""
 ENV DATABASE_HOST=""
 ENV DATABASE_PORT=3306
 
-ADD run.sh /code
-RUN chmod +x run.sh
-
 RUN mkdir /app
+ADD run.sh /app
 WORKDIR /app
+RUN chmod +x run.sh
 
 RUN useradd noRoot -s /bin/bash
 
@@ -27,5 +26,6 @@ RUN chmod -R 500 /code
 RUN chown -R noRoot /app
 
 USER noRoot
+WORKDIR /code
 
-CMD /bin/bash -c '/code/run.sh'
+CMD /bin/bash -c '/app/run.sh'
