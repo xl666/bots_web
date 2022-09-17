@@ -1,0 +1,5 @@
+~
+/app/prueba/*.cpt
+/app/prueba/.conf.env.cpt.~undo-tree~
+*~
+/app/prueba/db.sqlite3

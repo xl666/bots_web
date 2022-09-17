@@ -1,0 +1,22 @@
+
+{% extends 'base.html' %}
+{% block titulo %}Chat{% endblock %}
+{% block encabezado %}Enviar un dato{% endblock %}
+{% block contenido %}
+
+
+<form method="POST" action="/enviar/">
+  {% csrf_token %}
+  <div class="mb-3 mt-3">
+    <label for="mensaje" class="form-label">Mensaje:</label>
+    <input type="text" class="form-control" id="mensaje" placeholder="Mensaje" name="mensaje">
+  </div>
+  <div class="mb-3 mt-3">
+    <input type="submit"/>
+  </div>
+  
+</form>
+
+
+
+{% endblock %}

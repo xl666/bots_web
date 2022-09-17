@@ -1,0 +1,41 @@
+
+{% extends 'base.html' %}
+{% block titulo %}Chat{% endblock %}
+
+{% block scripts %}
+<script type="text/javascript" src="/static/js/chat.js"></script>
+
+{% endblock %}
+
+{% block encabezado %}Bot prueba{% endblock %}
+{% block contenido %}
+
+<h2>Mensajes:</h2>
+<div id="mensajesBox">
+  
+</div>
+
+<br />
+
+<div class="container">
+  <div>
+    <div class="row">
+      
+      <div class="col-sm-12">
+	<input type="text" class="form-control" id="mensaje" placeholder="Mensaje" name="mensaje">
+      </div>
+    </div>
+    <br />
+  <div class="d-grid">
+    <button id="bEnviar" class="btn btn-primary btn-block">Enviar</button>
+  </div>
+
+  </div>
+</div>
+
+  
+</div>
+
+
+
+{% endblock %}
