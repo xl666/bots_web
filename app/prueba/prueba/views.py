@@ -16,6 +16,9 @@ def generar_identificador():
     return base64.b64encode(binario).decode('utf-8')
 
 
+def main(request):
+    return render(request, 'main.html')
+
 def request_proxy(request, template):
     request.session['sender'] = generar_identificador()
     return render(request, template, {'prefijo': conf.PATH_PREFIX})
