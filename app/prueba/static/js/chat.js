@@ -1,6 +1,15 @@
 
 $(function(){
 
+    function generar_respuestas(respuesta) {
+	let res = "";
+	for(var i = 0; i < respuesta.length-1; i++) {
+	    res += '<span class="badge  bg-danger"><b>' + respuesta[i] + '</b></span><br />';
+	}
+	res += '<span class="badge  bg-danger"><b>' + respuesta[i] + '</b></span>';
+	return res;
+    }
+    
     function mandar_recibir_mensaje() {
 	var url = "/enviar_mensaje/";
 	if(prefijo_sitio != "") {
@@ -13,11 +22,11 @@ $(function(){
 	}, function(data, status){
 	    var contenido = $("#mensajesBox").html() + "<br />";
 	    var mensaje = '<span class="badge  bg-primary" style="float: right;"><b>' + data.mensaje + '</b></span>';    
-	    var respuesta = '<span class="badge  bg-danger"><b>' + data.respuesta + '</b></span>';
+	    var respuesta = generar_respuestas(data.respuesta);
 	    $("#mensajesBox").html(contenido + mensaje + "<br />" + respuesta);
-	    $('#mensajesBox').scrollTop($('#mensajesBox')[0].scrollHeight);
-	    $('#mensaje').val("");
-	});
+		$('#mensajesBox').scrollTop($('#mensajesBox')[0].scrollHeight);
+		$('#mensaje').val("");
+	    });
     }
     
     $("#bEnviar").click(mandar_recibir_mensaje);

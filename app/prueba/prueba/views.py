@@ -35,9 +35,9 @@ def enviar_mensaje(request):
         sender = request.session.get('sender', 'bob')
         respuesta = prueba.peticiones.mandar_mensaje(sender, mensaje, host, puerto)
         if respuesta:
-            contenido = {"mensaje": mensaje, "respuesta": respuesta['text']}
+            contenido = {"mensaje": mensaje, "respuesta": respuesta}
             return JsonResponse(contenido)
         else:
-            contenido = {"mensaje": mensaje, "respuesta": 'No te puedo ayudar con eso'}
+            contenido = {"mensaje": mensaje, "respuesta": ['No te puedo ayudar con eso']}
             return JsonResponse(contenido)
 
