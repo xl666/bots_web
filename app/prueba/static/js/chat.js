@@ -4,9 +4,14 @@ $(function(){
     function generar_respuestas(respuesta) {
 	let res = "";
 	for(var i = 0; i < respuesta.length-1; i++) {
-	    res += '<span class="badge  bg-danger"><b>' + respuesta[i] + '</b></span><br />';
+	    res += '<span class="badge  bg-danger">' + respuesta[i] + '</span><br />';
 	}
-	res += '<span class="badge  bg-danger"><b>' + respuesta[i] + '</b></span>';
+	res += '<span class="badge  bg-danger">' + respuesta[i] + '</span>';
+	let path_prism = "/static/js/prism.js"
+	if(prefijo_sitio != "") {
+	    path_prism = "/" + prefijo_sitio + "static/js/prism.js";
+	}
+	res += `<script src="${path_prism}"></script>`;
 	return res;
     }
     
