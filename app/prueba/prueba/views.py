@@ -26,6 +26,9 @@ def request_proxy(request, template):
 def chat_bot_prueba(request):
     return request_proxy(request, 'bot_prueba.html')
 
+def chat_bot_prog_admon(request):
+    return request_proxy(request, 'prog_admon.html')
+
 @csrf_exempt
 def enviar_mensaje(request):
     if request.method == 'POST':

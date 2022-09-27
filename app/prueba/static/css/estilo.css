@@ -6,6 +6,10 @@
     scrollbar-width: none;
 }
 
+.badge {
+    text-align: left;
+}
+
 #mensajesBox::-webkit-scrollbar {
     display: none;
 }
