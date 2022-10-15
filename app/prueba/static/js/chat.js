@@ -3,10 +3,13 @@ $(function(){
 
     function generar_respuestas(respuesta) {
 	let res = "";
-	for(var i = 0; i < respuesta.length-1; i++) {
-	    res += '<span class="badge  bg-danger">' + respuesta[i] + '</span><br />';
+	for(var i = 0; i < respuesta.length; i++) {
+	    if(!respuesta[i].trim().startsWith("<pre")) {
+		res += '<p class="from-them">' + respuesta[i] + '</p>';
+	    } else {
+		res += '<div>' + respuesta[i] + '</div>';
+	    }
 	}
-	res += '<span class="badge  bg-danger">' + respuesta[i] + '</span>';
 	let path_prism = "/static/js/prism.js"
 	if(prefijo_sitio != "") {
 	    path_prism = "/" + prefijo_sitio + "static/js/prism.js";
@@ -25,11 +28,11 @@ $(function(){
 	    host: host_bot,
 	    puerto: puerto_bot,
 	}, function(data, status){
-	    var contenido = $("#mensajesBox").html() + "<br />";
-	    var mensaje = '<span class="badge  bg-primary" style="float: right;"><b>' + data.mensaje + '</b></span>';    
+	    var contenido = $("#mensajesBox").html();
+	    var mensaje = '<p class="from-me">' + data.mensaje + '</p>';    
 	    var respuesta = generar_respuestas(data.respuesta);
-	    $("#mensajesBox").html(contenido + mensaje + "<br />" + respuesta);
-		$('#mensajesBox').scrollTop($('#mensajesBox')[0].scrollHeight);
+	    $("#mensajesBox").html(contenido + mensaje + respuesta);
+	    $('#mensajesBox').scrollTop($('#mensajesBox')[0].scrollHeight);
 		$('#mensaje').val("");
 	    });
     }
