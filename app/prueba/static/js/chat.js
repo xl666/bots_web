@@ -5,9 +5,9 @@ $(function(){
 	let res = "";
 	for(var i = 0; i < respuesta.length; i++) {
 	    if(!respuesta[i].trim().startsWith("<pre")) {
-		res += '<p class="from-them">' + respuesta[i] + '</p>';
+		res += '<div class="from-them">' + respuesta[i] + '</div>';
 	    } else {
-		res += '<div>' + respuesta[i] + '</div>';
+		res += '<div">' + respuesta[i] + '</div>';
 	    }
 	}
 	let path_prism = "/static/js/prism.js"
@@ -29,7 +29,7 @@ $(function(){
 	    puerto: puerto_bot,
 	}, function(data, status){
 	    var contenido = $("#mensajesBox").html();
-	    var mensaje = '<p class="from-me">' + data.mensaje + '</p>';    
+	    var mensaje = '<div class="from-me">' + data.mensaje + '</div>';    
 	    var respuesta = generar_respuestas(data.respuesta);
 	    $("#mensajesBox").html(contenido + mensaje + respuesta);
 	    $('#mensajesBox').scrollTop($('#mensajesBox')[0].scrollHeight);
