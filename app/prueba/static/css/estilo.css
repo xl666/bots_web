@@ -36,7 +36,7 @@
 .imessage div {
     border-radius: 1.15rem;
     line-height: 1.25;
-    max-width: 75%;
+    max-width: 100%;
     padding: 0.5rem .875rem;
     position: relative;
     word-wrap: break-word;
@@ -180,7 +180,7 @@ body {
     .imessage {
 	font-size: 1.05rem;
 	margin: 0 auto 1rem;
-	max-width: 600px;
+	max-width: 100%;
 	padding: 0.25rem 0.875rem;
     }
 
