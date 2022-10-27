@@ -1,5 +1,6 @@
 import requests
 import os
+import functools
 
 
 def preprocesar_imgs(texto):

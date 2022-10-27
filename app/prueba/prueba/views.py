@@ -44,3 +44,4 @@ def enviar_mensaje(request):
             contenido = {"mensaje": mensaje, "respuesta": ['No te puedo ayudar con eso']}
             return JsonResponse(contenido)
 
+
