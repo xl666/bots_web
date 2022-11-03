@@ -27,7 +27,18 @@ def preprocesar_codigo(texto):
     path = 'static/codigo/%s' % path
     contenido = recuperar_contenido_archivo(path)
     return plantilla % (lenguaje, contenido)
-    
+
+def preprocesar_saltos_linea(texto:str):
+    """
+    Cambia \n por <br />.
+
+    Keyword Arguments:
+    texto -- 
+    returns: str
+    """
+    partes = texto.split('\n')
+    return functools.reduce(lambda s1, s2: s1 + '<br />' + s2, partes)
+
 def recolectar_texts(objetos):
     res = []
     for obj in objetos:
@@ -38,7 +49,7 @@ def recolectar_texts(objetos):
             contenido = preprocesar_codigo(texto)
             res.append(contenido)
         else:
-            res.append(texto)
+            res.append(preprocesar_saltos_linea(texto))
     return res
 
 
