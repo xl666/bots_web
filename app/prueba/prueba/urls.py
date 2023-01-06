@@ -23,5 +23,7 @@ urlpatterns = [
     path('%sbotProgAdmon/' % settings.PATH_PREFIX, vistas.chat_bot_prog_admon, name='botProgAdmon'),
     path('%senviar_mensaje/' % settings.PATH_PREFIX, vistas.enviar_mensaje, name='enviar_mensaje'),
     path('%smain/' % settings.PATH_PREFIX, vistas.main, name='main'),
+    #path('%s' % settings.PATH_PREFIX, vistas.main, name='main'),
+    path('%sbotPracticasIS/' % settings.PATH_PREFIX, vistas.chat_bot_practicasIS, name='botPracticasIS'),
     
 ]
