@@ -32,6 +32,9 @@ def chat_bot_prog_admon(request):
 def chat_bot_practicasIS(request):
     return request_proxy(request, 'bot_practicasIS.html')
 
+def chat_bot_servicioIS(request):
+    return request_proxy(request, 'bot_SSIS.html')
+
 @csrf_exempt
 def enviar_mensaje(request):
     if request.method == 'POST':
