@@ -31,5 +31,7 @@ urlpatterns = [
          name='botPracticasIS'),
     path('%sbotServicioIS/' % settings.PATH_PREFIX, vistas.chat_bot_servicioIS,
          name='botServicioIS'),
+    path('%sbotERArqui/' % settings.PATH_PREFIX, vistas.chat_bot_ERArqui,
+         name='botERArqui'),
     
 ]
