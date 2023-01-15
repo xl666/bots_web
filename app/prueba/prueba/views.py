@@ -38,6 +38,9 @@ def chat_bot_servicioIS(request):
 def chat_bot_ERArqui(request):
     return request_proxy(request, 'botERArqui.html')
 
+def chat_bot_SSArqui(request):
+    return request_proxy(request, 'botSSArqui.html')
+
 @csrf_exempt
 def enviar_mensaje(request):
     if request.method == 'POST':
